@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#3</title>
+</head>
+<body>
+    <h1 id="change" onclick=change()>메뉴를 선택하세요.</h1>
+    <form id="menu">
+        <input type="checkbox" id="black" value="짜장면">
+        <label for="black">짜장면</label><br>
+        <input type="checkbox" id="red" value="짬뽕">
+        <label for="red">짬뽕</label><br>
+        <input type="checkbox" id="burger" value="햄버거">
+        <label for="burger">햄버거</label><br>
+
+        <input type="button" value="주문완료" onclick="checkValue()">
+    </form>
+    <div id="menu_result"></div>
+    <script>
+        function change(){
+            var ch = document.getElementById("change");
+            if(ch.style.color == "red"){
+                ch.style.color = "green";
+            }
+            else{
+                ch.style.color = "red";
+            }
+        }
+        function checkValue(){
+            var arr = new Array();
+
+            var chArr = document.getElementById("menu");
+            for(var i = 0; i < chArr.length; ++i){
+                if(chArr[i].checked){
+                    arr.push(chArr[i].value)
+                }
+            }
+            var arr_join = arr.join(', ');
+
+            document.getElementById("menu_result").innerHTML = arr_join + "을(를) 주문하였습니다.";
+        }
+    </script>
+</body>
+</html>

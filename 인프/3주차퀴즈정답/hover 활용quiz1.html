@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quiz1</title>
+
+    <style>
+        img{
+            position:absolute;
+            left:20px;
+
+        }
+        #img_trump{
+            opacity:0;
+        }
+        #container:hover>#img_trump{
+            opacity:1;
+
+        }
+        #test_front:hover{
+            opacity:1;
+        }
+        #test_front{
+            opacity:0;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>:hover 활용</h3>
+    <br>
+    <hr>
+    <p>마우스를 올리면 카드의 앞면이 보인다.</p>
+
+    
+    <div id="testing_img">
+        <img src="img/back.jpg" alt="~" id="test_back">
+        <img src="img/trump.jpg" alt="~" id="test_front">
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4번</title>
+</head>
+<body>
+    <script>
+        var rand1 = (Math.random() * 100).toFixed(0);
+        var rand1 = rand1 % 100;
+        var rand2 = (Math.random() * 100).toFixed(0);
+        var rand2 = rand2 % 100;
+
+        var total = rand1 + rand2;
+        
+        document.write(rand1, "+", rand2, "=<br>");
+
+        function sum(){
+            if(total == Number(document.getElementById("sum").value)){
+                alert("정답!");
+            }
+            else{
+                alert("오답..");
+            }
+        }
+    </script>
+    <h3>덧셈 계산 하시고, 결과를 입력하고 확인 버튼을 클릭하여 정확한지 확인해 보세요</h3>
+    <hr>
+    덧셈 결과 : <input type="text" id="sum"> <input type="button" value="결과 확인" onclick="sum()">
+</body>
+</html>

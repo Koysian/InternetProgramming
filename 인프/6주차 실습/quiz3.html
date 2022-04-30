@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#3</title>
+</head>
+<body>
+    <h2>정답의 동적 삽입</h2>
+    <hr>
+        <div>Q. 거울아 거울아 세상에서 누가 가장 예쁘니?</div>
+        <input type="button" value="답보기" onclick=createDIV1()>
+        <br><br>
+        <div id="button1"></div>
+    </p>
+    <br>
+
+    <p>
+        <div>Q. 죽느냐 사느냐 어떤것이 문제인가?</div>
+        <input type="button" value="답보기" onclick=createDIV2()>
+        <br><br>
+        <div id="button2"></div>
+    </p>
+
+
+    <script>
+
+        var time1 = 0;
+        var time2 = 0;
+        function createDIV1(){
+            if(time1 != 0){
+                return;
+            }
+            var obj_1 = document.getElementById("button1");
+            var newDIV_1 = document.createElement("div");
+            newDIV_1.innerHTML = "백설공주";
+
+            obj_1.appendChild(newDIV_1);
+            time1 = 1;
+        }
+        function createDIV2(){
+            if(time2 != 0){
+                return;
+            }
+            var obj_2 = document.getElementById("button2");
+            var newDIV_2 = document.createElement("div");
+            newDIV_2.innerHTML = "둘다";
+
+            obj_2.appendChild(newDIV_2);
+            time2 = 1;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h2>계산해봅시다</h2>
+    <hr>
+    <div id="1" value="2 + 4">2 + 4</div> = <div onclick="answer1()" id="ans1">답</div>
+    <br>
+    <div id="2" value="4 * 20 + 64">4 * 20 + 64</div> = <div onclick="answer2()" id="ans2">답</div>
+    <br>
+    <div id="3" value="20/5-8*2">20/5-8*2</div> = <div onclick="answer3()" id="ans3">답</div>
+
+
+    <script>
+        function answer1(){
+            document.getElementById("ans1").innerHTML = 6;
+        }
+        function answer2(){
+            document.getElementById("ans2").innerHTML = 144;
+        }
+        function answer3(){
+            document.getElementById("ans3").innerHTML = -12;
+        }
+    </script>
+</body>
+</html>

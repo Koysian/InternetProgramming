@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>33p, 43p, 46p 구현</title>
+</head>
+<body>
+    <script>
+
+        //33p
+        
+        var x=13, y=7;
+
+        document.write("x=" + x + ", y=" + y + "<br><br>");
+        document.write("x == y: " + (x == y) + "<br>");
+        document.write("x != y:" + (x != y) + "<br>");
+        document.write("x >= y:" + (x >= y) + "<br>");
+        document.write("x > y:" + (x > y) + "<br>");
+        document.write("x <= y:" + (x <= y) + "<br>");
+        document.write("x < y:" + (x < y) + "<br><br>");
+
+        //43p
+
+        document.write("abc" + 23 + "<br>");
+        document.write(23 + "abc" + "<br>");
+        document.write(23 + "35" + "<br>");
+        document.write(23 + 35 + "<br>");
+        document.write(23 + 35 +"abc" + "<br>");
+        document.write("abc" + 23 + 35 + "<br><hr>");
+
+        var name = "DongHo";
+        document.write(name == "DongHo");
+        document.write("<br>");
+        document.write(name > "park");
+
+        //46p
+
+        var fruits = "사과";
+        switch(fruits){
+            case "바나나":
+                price = 200; break;
+            case "사과":
+                price = 300; break;
+            case "체리":
+                price = 400; break;
+            default:
+                document.write("팔지 않습니다.");
+                price = 0;
+        }
+        document.write("<br>price: " + price + "<br>")
+    </script>
+</body>
+</html>

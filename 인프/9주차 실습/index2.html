@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            background-color: aliceblue;
+            width: 400;
+            height: 300;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <canvas id="canvas"></canvas>
+
+    <script>
+        let canvas = document.getElementById("canvas"); 
+        let context = canvas.getContext("2d");
+
+        function init() {
+            canvas.addEventListener("mousemove", function(event) {move(event)}, false);
+            canvas.addEventListener("mousedown", function(event) {down(event)}, false);
+            canvas.addEventListener("mouseup", function(event) {up(event)}, false);
+            canvas.addEventListener("mouseout", function(event) {out(event)}, false);
+        }
+
+        let X = 0;
+        let Y = 0;
+        let drawing = false;
+
+        function move(e){
+            if(!drawing){
+                return;
+            }
+
+            let curX = e.offsetX;
+            let curY = e.offsetY;
+            draw(curX, curY);
+            X = curX;
+            Y = curY;
+        }
+        function down(e){
+            X = e.offsetX;
+            Y = e.offsetY;
+            drawing = true;
+        }
+        function up(e){
+            drawing = false;
+        }
+        function out(e){
+            drawing = false;
+        }
+
+        function draw(curX, curY){
+            context.beginPath();
+            context.moveTo(X, Y);
+            context.lineTo(curX, curY);
+            context.stroke();
+        }
+    </script>
+</body>
+</html>

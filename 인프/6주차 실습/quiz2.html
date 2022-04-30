@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#2</title>
+</head>
+<body>
+    <style>
+        div{
+            display: inline;
+            color: blue;
+        }
+    </style>
+    <h2>다음 빈 곳에 숨은 단어? <input type="button" value="show/hide" onclick=show_hide()></h2>
+    <hr>
+    <ul id="list">
+        <li>I (     ) you.</li>
+        <li>CSS is Cascading (      ) Sheet.</li>
+        <li>응답하라 (      ).</li>
+    </ul>
+
+
+
+
+
+
+    <script>
+
+        var list_change = 0;
+        function show_hide(){
+
+            if(list_change == 0){
+                document.getElementById("list").innerHTML = "<li>I (<div>love</div>) you.</li><li>CSS is Cascading (<div>Style</div>) Sheet.</li><li>응답하라 (<div>1988</div>).</li>";
+                list_change = 1;
+            }
+            else if(list_change == 1){
+                document.getElementById("list").innerHTML = "<li>I (    ) you.</li><li>CSS is Cascading (    ) Sheet.</li><li>응답하라 (    ).</li>"
+                list_change = 0;
+            }
+        }
+    </script>
+</body>
+</html>

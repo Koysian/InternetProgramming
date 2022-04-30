@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2번</title>
+</head>
+<body>
+    <script>
+        var rand = (Math.random() * 100).toFixed(0);
+        var rand = rand % 100;
+        function game(){
+
+            var player = Number(document.getElementById("player").value);
+            if(player == rand){
+                document.getElementById("hint").value = "성공";
+            }
+            else{
+                var x = Number(document.getElementById("time").value);
+                x += Number(1);
+                document.getElementById("time").value = x;
+                if (player > rand){
+                    document.getElementById("hint").value = "너무 큼";
+                }
+                else{
+                    document.getElementById("hint").value = "너무 작음";
+                }
+            }
+        }
+    </script>
+    <form name="a">
+        <h1>숫자 맞추기 게임</h1>
+        <p>이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다. 숫자는 1부터 100사이에 있습니다.</p>
+        입력:<input type="text" id="player"> <input type="button" value="확인" onclick="game()"><br>
+        추측횟수:<input type="text" id="time" value=0> 
+        힌트:<input type="text" id="hint">
+    </form>
+</body>
+</html>

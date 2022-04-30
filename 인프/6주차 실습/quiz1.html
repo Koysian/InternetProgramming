@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1</title>
+</head>
+<body>
+    <h1>메뉴를 선택하세요.</h1>
+    <br>
+    
+    <form id="menu">
+        <select name="china" id="chn">
+            <option value="1">짜장면</option>
+            <option value="2">짬뽕</option>
+            <option value="3">탕수육</option>
+        </select>
+        <br>
+        <input id="number" type="number" min="1" max="10" step="1">
+        <br>
+        <br>
+
+        <input type="button" value="주문완료" onclick="checkValue()">
+
+        <div id="text"></div>
+
+    </form>
+    <div id="menu_result"></div>
+    <script>
+        
+        function checkValue(){
+
+            var ele = document.getElementById("chn").value;
+            var num = document.getElementById("number").value;
+
+            if(ele == "1"){
+                document.getElementById("text").innerHTML = "짜장면 " + num + "개 주문하였습니다.";
+            }
+            else if(ele == "2"){
+                document.getElementById("text").innerHTML = "짬뽕 " + num + "개 주문하였습니다.";
+            }
+            else if(ele == "3"){
+                document.getElementById("text").innerHTML = "탕수육 " + num + "개 주문하였습니다.";
+            }
+        }
+    </script>
+</body>
+</html>

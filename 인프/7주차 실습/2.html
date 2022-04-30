@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="get()">
+    <form id="rad">
+        <label><input type="radio" name="fruit" id="1" value="banaan">사과</label>
+        <br>
+        <input type="radio" name="fruit" id="2" value="banaasdasdna"><label for="2">바나나</label>
+    </form>
+    <input type="button" value="check" id="but">
+
+    <script>
+        var but;
+        function get(){
+            but = document.getElementById("but");
+            but.onclick = click;
+        }
+        function click(){
+            var data = document.getElementsByName("fruit");
+            var one = null;
+            for(var i = 0; i < data.length; ++i){
+                if(data[i].checked){
+                    one = data[i];
+                }
+            }
+            alert(one.value);
+        }
+    </script>
+</body>
+</html>

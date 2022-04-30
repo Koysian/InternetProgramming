@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>2번</title>
+
+    <style>
+        .j{
+            background-color: aliceblue;
+            
+        }
+        .main{
+            background-color: gray;
+            color: yellow;
+        }
+        *{
+            text-align: left;
+            padding: 5px;
+            height: 15;
+            width: 100;
+        }
+        table{
+            border-collapse: collapse;
+        }
+
+    </style>
+    <script>
+        function over(obj){
+            obj.style.background='pink'
+        }
+        function out(obj){
+            obj.style.background='aliceblue'
+        }
+    </script>
+
+</head>
+<body>
+    <h3>1학기 성적</h3>
+    <hr>
+    <table>
+        <tr class="main">
+            <td>이름</td>
+            <td>HTML</td>
+            <td>CSS</td>
+        </tr>
+        <tr onmouseover="over(this)" onmouseout="this.style.background='white'">
+            <td>황기태</td>
+            <td>80</td>
+            <td>70</td>
+        </tr>
+        <tr class="j" onmouseover="over(this)" onmouseout="out(this)">
+            <td>이재문</td>
+            <td>95</td>
+            <td>99</td>
+        </tr>
+        <tr onmouseover="over(this)" onmouseout="this.style.background='white'">
+            <td>이병은</td>
+            <td>85</td>
+            <td>90</td>
+        </tr>
+        <tr class="j" onmouseover="over(this)" onmouseout="out(this)">
+            <td>김남윤</td>
+            <td>50</td>
+            <td>40</td>
+        </tr>
+        <tr class="main">
+            <td>합</td>
+            <td>310</td>
+            <td>249</td>
+        </tr>
+    </table>
+</body>
+</html>

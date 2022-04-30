@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1번</title>
+</head>
+<body>
+
+    <h2>오전이면 lightskyblue, 오후이면 orange 배경</h2>
+    <hr>
+    <div id="time"></div>
+    <script>
+        function set(){
+            var now = new Date();
+            var s = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+            document.getElementById("time").innerHTML = "current Time: " + s;
+            if(now.getHours() >= 12){
+                document.body.style.background = 'orange';
+            }
+            else{
+                document.body.style.background = 'blue';
+            }
+
+            setTimeout('set()', 1000);
+        }
+        set();
+    </script>
+</body>
+</html>

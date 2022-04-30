@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#3</title>
+
+</head>
+<body>
+    <h2>라디오 버튼을 클릭하면 이미지를 출력합니다.</h2>
+    <hr>
+
+
+
+    <form id="fr">
+        <label><input type="radio" value="apple" name="fruit" onclick="change()" id="ap">사과</label>
+        <label><input type="radio" value="grape" name="fruit" onclick="change()" id="gr">포도</label>
+        <label><input type="radio" value="banana" name="fruit" onclick="change()" id="ba">바나나</label>
+    </form>
+    
+    <div id="result"></div>
+
+    <script>
+        function change(){
+            var fr = document.getElementsByName("fruit");
+            var index = -1;
+            for(var i = 0; i < fr.length; ++i){
+                if(fr[i].checked){
+                    index = i;
+                    break;
+                }
+            }
+
+            if(index == 0){
+                document.getElementById("result").innerHTML = "<img src='apple.jpg' alt='~'>";
+            }
+            else if(index == 1){
+                document.getElementById("result").innerHTML = "<img src='grape.jpg' alt='~'>";
+            }
+            else{
+                document.getElementById("result").innerHTML = "<img src='banana.jpg' alt='~'>";
+            }
+        }
+    </script>
+</body>
+</html>

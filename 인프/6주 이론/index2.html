@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#2</title>
+</head>
+<body>
+    <h1>난수 10개 생성</h1>
+    <script>
+        myArr = new Array();
+        for(var i = 0; i < 10; ++i){
+            var rand = (Math.random() * 100).toFixed(0);
+            myArr.push(rand);
+        }
+        document.write("<hr>", myArr);
+        myArr.sort();
+        document.write("<hr>제일 큰 수는 ", myArr[9]);
+        document.write("<hr>", myArr);
+    </script>
+</body>
+</html>
