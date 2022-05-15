@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1</title>
+</head>
+<body>
+    <div>
+        예치기간: 1~20 범위 수
+        <br>
+        조건에 부합되지 않는 수의 입력시 알람 메시지 출력후 다시 입력 받음. 
+        <br>
+        Calculate now! 버튼에 마우스 올릴경우 블루 색상으로 변경
+        <br>
+        테이블은 다음과 동일하게 구현
+    </div>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <td>initial Capitals</td>
+            <td><input type="text" id="init">$</td>
+        </tr>
+        <tr>
+            <td>Annual Inrerest Rate:</td>
+            <td><input type="text" id="rate">%</td>
+        </tr>
+        <tr>
+            <td>Deposit Period</td>
+            <td><input type="text" id="period">Year</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input id="but" style="text-align: center;" onclick="aaa()" type="button" onmouseout="this.style.color='black'" onmouseover="this.style.color='blue'" value="Caculate now!"></td>
+        </tr>
+        <tr>
+            <td>Principal and inerest</td>
+            <td><input type="text" id="res">$</td>
+        </tr>
+    </table>
+    <script>
+        function aaa(){
+            var init = document.getElementById("init");
+            var rate = document.getElementById("rate");
+            var period = document.getElementById("period");
+            var res = document.getElementById("res");
+
+            var ans = parseInt(init.value);
+            if(parseInt(period.value) > 20 || parseInt(period.value) < 1 || parseInt(rate.value) < 0 || parseInt(rate.value) > 8 || parseInt(init.value) < 0 || parseInt(init.value) > 1000000){
+                alert("다시 입력하세요!")
+                return;
+            }
+            for(var i = 0; i < parseInt(period.value); ++i){
+                ans = ans * (1 + parseInt(rate.value)/100);
+            }
+            res.value = ans;
+        }
+    </script>
+</body>
+</html>

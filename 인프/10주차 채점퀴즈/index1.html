@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <script src="jquery-latest.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            $("#button1").click(function(){
+                $("#img").css("border", "10px solid white");
+                $("#img").css("border-radius", "10px");
+                $("#img").css("box-shadow", "3px 3px 5px black");
+            })
+        })
+        $(document).ready(function () {
+            $("#button2").click(function(){
+                $("#img").css("border", "none");
+                $("#img").css("border-radius", "none");
+                $("#img").css("box-shadow", "none");
+            })
+        })
+    </script>
+    <br>
+    <button id="button1">테두리 보이기</button>
+    <button id="button2">테두리 숨기기</button>
+    <br>
+    <br><br>
+    <img src="1.png" alt="~" id="img">
+
+</body>
+</html>

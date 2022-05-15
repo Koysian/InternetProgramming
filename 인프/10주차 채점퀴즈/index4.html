@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    <img id="canvas" src="1.png" onmouseover="over()" onmouseout="out()">
+    <script>
+
+        let canvas = document.getElementById("canvas"); 
+        canvas.height = 300;
+        canvas.width = 400;
+
+        function over(){
+            canvas.height = 300 * 2.5;
+            canvas.width = 400 * 2.5;
+        }
+        function out(){
+            canvas.height = 300;
+            canvas.width = 400;
+        }
+    </script>
+</body>
+</html>

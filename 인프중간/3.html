@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>끝말잇기 입니다.</h4>
+    <h3>단어를 입력해보세요.</h3>
+    <hr>
+    <input type="text" id="in" onkeypress="aaa(event)">
+
+    <div id="div" onclick="aaa()"></div>
+
+    <script>
+        var last = new String();
+        var str = new String();
+        var count = 0;
+        function aaa(e){
+            if(e.keyCode != 13){
+                return;
+            }
+            if(count != 0){
+                last = str;
+            }
+            str = document.getElementById("in").value;
+            if(count == 0){
+                last = str.value;
+                document.getElementById("div").innerHTML += "<br>" + str;
+                ++count;
+                return;
+            }
+
+            if(last[last.length - 1] == str[0]){
+                document.getElementById("div").innerHTML += "<br>" + str;
+            }
+            else{
+                alert("다시 생각해 보세요.")
+            }
+            
+        }
+    </script>
+</body>
+</html>

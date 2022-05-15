@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    A:<input type="text" id="A">
+    B:<input type="text" id="B">
+    C:<input type="text" id="C">
+    D:<input type="text" id="D">
+    E:<input type="text" id="E">
+    <input type="button" value="차트 그리기" onclick="chart()">
+    
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <script>
+
+        let canvas = document.getElementById("canvas"); 
+        let context = canvas.getContext("2d");
+
+        function chart(){
+            let A = parseInt(document.getElementById("A").value);
+            let B = A + parseInt(document.getElementById("B").value);
+            let C = B + parseInt(document.getElementById("C").value);
+            let D = C + parseInt(document.getElementById("D").value);
+            let E = D + parseInt(document.getElementById("E").value);
+
+            A *= (2/100);
+            B *= (2/100);
+            C *= (2/100);
+            D *= (2/100);
+            E *= (2/100);
+
+
+            context.beginPath();
+            context.arc(100, 100, 80, 0, A*Math.PI, false);
+            context.fillStyle = "blue";
+            context.fill();
+
+            context.beginPath();
+            context.arc(100, 100, 80, A*Math.Pi, B*Math.PI, false);
+            context.fillStyle = "green";
+            context.fill();
+
+            context.beginPath();
+            context.arc(100, 100, 80, B*Math.Pi, C*Math.PI, false);
+            context.fillStyle = "yellow";
+            context.fill();
+
+            context.beginPath();
+            context.arc(100, 100, 80, C*Math.Pi, D*Math.PI, false);
+            context.fillStyle = "magenta";
+            context.fill();
+
+            context.beginPath();
+            context.arc(100, 100, 80, D*Math.Pi, E*Math.PI, false);
+            context.fillStyle = "red";
+            context.fill();
+        }
+    </script>
+
+</body>
+</html>

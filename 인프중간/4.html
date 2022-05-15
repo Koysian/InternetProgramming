@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#4</title>
+</head>
+<body>
+    <input type="button" id="new" onclick="New()" value="add_new_row">
+    <input type="button" id="delete" onclick="Del()" value="delete_last_row">
+    
+
+    <div>
+        <table id="table" border="1">
+            <tr>
+                <td style="background-color: green;"><strong>Header1</strong></td>
+                <td style="background-color: green;"><strong>Header2</strong></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var count = 0;
+        var numCount = parseInt(count);
+        function New(){
+            count++;
+            var str = new String;
+            for(var i = 0; i < count; ++i){
+                str += "<tr><td>row " + (i+1) + ",cell 1" + "</td>" + "<td>row " + (i+1) + ",cell 2" + "</td></tr>";
+            }
+            document.getElementById("table").innerHTML = "<td style='background-color: green;'><strong>Header1</strong></td>" + "<td style='background-color: green;'><strong>Header2</strong></td>" + str;
+        }
+
+        function Del(){
+            count--;
+            if(count < 0){
+                count = 0;
+            }
+            var str = new String;
+            for(var i = 0; i < count; ++i){
+                str += "<tr><td>row " + (i+1) + ",cell 1" + "</td>" + "<td>row " + (i+1) + ",cell 2" + "</td></tr>";
+            }
+            document.getElementById("table").innerHTML = "<td style='background-color: green;'><strong>Header1</strong></td>" + "<td style='background-color: green;'><strong>Header2</strong></td>" + str;
+       }
+    </script>
+</body>
+</html>
